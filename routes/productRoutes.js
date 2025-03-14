@@ -6,12 +6,9 @@ const productController = require('../controllers/productController');
 
 router.get('/', productController.getProducts)
 
-router.post('/', (req, res) => {
-  res.send("Adding a new product");
-});
+router.post('/', productController.postProducts);
 
-router.get('/:id', (req, res) => {
-  res.send(`Fetching product with ID: ${req.params.id}`);
-});
+
+router.get('/:id', productController.getProductsbyid);
 
 module.exports = router;
