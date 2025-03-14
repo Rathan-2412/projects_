@@ -4,7 +4,9 @@ const getProducts=(req,res)=>{
     res.sendFile(path.join(__dirname , '..','views','products.html'))
 }
 const postProducts=(req,res)=>{
-    res.send("Adding a new product");
+    const data = req.body;
+    console.log(data)
+    res.json({value:data.product_name})
 }
 
 const getProductsbyid=(req,res)=>{
